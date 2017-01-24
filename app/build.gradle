@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'android-apt'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -26,4 +26,12 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+
+    //dagger2
+    apt 'com.google.dagger:dagger-compiler:2.0.2' //指定注解处理器
+    compile 'com.google.dagger:dagger:2.0.2'  //dagger公用api
+    provided 'org.glassfish:javax.annotation:10.0-b28'  //添加android缺失的部分javax注解
+
+
+
 }
