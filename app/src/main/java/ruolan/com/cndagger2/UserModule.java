@@ -16,21 +16,26 @@ import ruolan.com.cndagger2.ano.Release;
 public class UserModule {
 
 
-
     @Provides
-    @Debug
-    public ApiServer provideApiServerForDebug(OkHttpClient client){
-        Log.d("UserModule", "provideApiServerForDebug");
-        return new ApiServer(client);
+    @Singleton
+    public OkHttpClient provideOkHttpClient(){
+        return new OkHttpClient.Builder().build();
     }
 
+//    @Provides
+//    @Debug
+//    public ApiServer provideApiServerForDebug(OkHttpClient client){
+//        Log.d("UserModule", "provideApiServerForDebug");
+//        return new ApiServer(client);
+//    }
+//
     @Provides
     @Release
     public ApiServer provideApiServerForRelease(OkHttpClient client){
         Log.d("UserModule", "provideApiServerForRelease");
         return new ApiServer(client);
     }
-
+//
     @Provides
     public UserManager provideUserManager(ApiServer apiServer){
         return new UserManager(apiServer);

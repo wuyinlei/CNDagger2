@@ -31,23 +31,24 @@ public class ApiServer {
         Log.d("ApiServer", "绑定成功");
 
         //云端保存数据
+        Log.d("ApiServer", "mOkHttpClient:" + mOkHttpClient);
 
-        RequestBody requestBody = RequestBody.create(JSON,"");
-        Request request = new Request.Builder()
-                .url("")
-                .post(requestBody)
-                .build();
-
-        mOkHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-
-            }
-        });
+//        RequestBody requestBody = RequestBody.create(JSON,"");
+//        Request request = new Request.Builder()
+//                .url("")
+//                .post(requestBody)
+//                .build();
+//
+//        mOkHttpClient.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//
+//            }
+//        });
     }
 }

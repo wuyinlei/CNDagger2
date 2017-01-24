@@ -1,10 +1,13 @@
 package ruolan.com.cndagger2;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
 
 
-@Component(modules = {UserModule.class ,HttpModule.class})
+@Singleton
+@Component(modules = {UserModule.class})
 public interface UserComponent {
 
     void inject(MainActivity activity);
