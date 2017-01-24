@@ -4,7 +4,7 @@ import dagger.Component;
 
 
 
-@Component(modules = UserModule.class)
+@Component(modules = {UserModule.class ,HttpModule.class})
 public interface UserComponent {
 
     void inject(MainActivity activity);
